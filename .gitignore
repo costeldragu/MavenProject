@@ -13,6 +13,9 @@
 *.tar
 *.zip
 *.tgz
+*.iml
+*.ipr
+*.iws
 
 # Logs and databases #
 ######################
@@ -40,7 +43,7 @@ Thumbs.db
 markup
 /.buildpath
 /.project
-/wvr.iml
+
 /.vagrant
 /Vagrantfile
 /.vagrant
