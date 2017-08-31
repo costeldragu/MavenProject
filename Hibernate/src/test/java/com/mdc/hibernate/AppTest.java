@@ -21,6 +21,8 @@ public class AppTest
      */
     public AppTest(String testName) {
         super(testName);
+        //We need to add this as system property .. WTF ?
+        System.setProperty("hibernate.dialect.storage_engine", "innodb");
     }
 
     /**
@@ -84,6 +86,9 @@ public class AppTest
         testUser.getHistory().add(new UserHistory(new Date(),"Test 2"));
         testUser.getHistory().add(new UserHistory(new Date(),"Test 3"));
         testUser.getHistory().add(new UserHistory(new Date(),"Test 4"));
-
+        session.beginTransaction();
+        session.save(testUser);
+        session.getTransaction().commit();
+        session.close();
     }
 }
