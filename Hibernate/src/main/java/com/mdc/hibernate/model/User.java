@@ -1,7 +1,6 @@
 package com.mdc.hibernate.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class User {
     private Integer id;
@@ -10,6 +9,10 @@ public class User {
     private ProteinData proteinData = new ProteinData();
 
     private Set<UserHistory> history = new HashSet<UserHistory>();
+
+    private List<UserMail> userMailList = new ArrayList<UserMail>();
+
+    private Map<String,UserPhone> userPhoneMap = new HashMap<String, UserPhone>();
 
     public User() {}
 
@@ -45,6 +48,22 @@ public class User {
         this.proteinData = proteinData;
     }
 
+    public List<UserMail> getUserMailList() {
+        return userMailList;
+    }
+
+    public void setUserMailList(List<UserMail> userMailList) {
+        this.userMailList = userMailList;
+    }
+
+    public Map<String, UserPhone> getUserPhoneMap() {
+        return userPhoneMap;
+    }
+
+    public void setUserPhoneMap(Map<String, UserPhone> userPhoneMap) {
+        this.userPhoneMap = userPhoneMap;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -52,6 +71,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", proteinData=" + proteinData +
                 ", history=" + history +
+                ", userMailList=" + userMailList +
                 '}';
     }
 }
